@@ -1,5 +1,5 @@
 // npx ts-node src/foo.ts
-
+/*
 const fs = require('fs');
 const sparkplug = require('sparkplug-payload');
 const sparkplugbpayload = sparkplug.get("spBv1.0");
@@ -20,7 +20,7 @@ fs.writeFileSync('../../../../linux/experimental/clc/poc/schema.protobuf', buffe
  */
 
 const fs = require('fs');
-const protobuf = require('protobufjs');
+import * as protobuf from 'protobufjs';
 
 // Define the protobuf message
 const root = protobuf.Root.fromJSON({
@@ -35,7 +35,7 @@ const root = protobuf.Root.fromJSON({
 });
 
 // Read the binary data from the file
-const buffer = fs.readFileSync('persons.protobuf');
+const buffer = fs.readFileSync('lib/persons.protobuf');
 
 // Parse the binary data into a protobuf message
 const Person = root.lookupType('Person');
@@ -45,10 +45,10 @@ const personArray = Person.decode(buffer);
 const json = JSON.stringify(personArray.toJSON(), null, 2);
 
 // Write the JSON object to a file
-fs.writeFileSync('persons.json', json);
+//fs.writeFileSync('persons.json', json);
 
 
-console.log("hello");
+console.log(json);
 
 
 /*
