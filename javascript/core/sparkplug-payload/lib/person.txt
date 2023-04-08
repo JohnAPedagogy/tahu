@@ -1,1 +1,7 @@
-[{"name":"hello","age":1}]
+{
+  "metrics":[{
+  "name":"hello",
+  "type":"string",
+  "value":"world"
+  }]
+}

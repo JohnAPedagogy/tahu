@@ -1,7 +1,6 @@
 
 const fs = require('fs');
 
-import * as sparkplugbpayload from './sparkplugbpayload';
 import * as protobuf from 'protobufjs';
 
 // Read the JSON file
